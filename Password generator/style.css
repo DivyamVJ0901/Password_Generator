@@ -1,0 +1,304 @@
+/* Universal selector */
+*,
+* ::before,
+* ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan' , sans-serif   ;
+}
+
+/* Root ek ander jitni bhi cheez likhi hai ye global hai i.e, GLOBAL CSS*/
+:root{
+
+    --dk-violet: hsl(268,75%,9%);
+    --lt-violet: hsl(268,47%,21%);
+    --lt-violet2: hsl(281,89%,26%);
+    --vb-violet: hsl(285,89%,26%);
+    --vb-violet2: hsl(290,70%,36%);
+
+    --vb-yellow: hsl(52,100%,62%);
+
+    --pl-white: hsl(0,0%,100%);
+
+    --vb-cyan: hsl(176,100%,44%);
+
+    --vb-cyan2: hsl(177,92%,70%);
+
+    --dk-text: hsl(198,20%,13%);
+}
+
+body{
+    position: relative;
+    padding-top: 300px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    background:linear-gradient(231deg , rgba(22,6,40,1) 0% , rgba(52,28,79,1) 50% , rgba(88,7,125,1) 100%) ;
+}
+
+.wrapper{
+    width: 90%;
+    max-width: 450px;
+}
+
+h1{
+    color: var(--pl-white);
+    opacity: 75%;
+    text-align: center;
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
+
+.display-container{
+    position: relative;
+    padding-top: 0.35rem;
+    background-color: var(--dk-violet);
+    border-bottom: 0.35rem solid var(--lt-violet2);
+    border-radius: 1rem;
+    margin: 1rem 0;  
+}
+
+.display{
+    background:none;
+    width: 100%;
+    padding: 1.15rem 1rem;
+    color: var(--vb-yellow);
+    outline: none;
+    border:none;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 30px;
+    letter-spacing: 1px;
+    padding-right: 3.25rem;
+}
+
+.display::placeholder{
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    line-height: 30px;
+    opacity: 70%;
+    color: var(--vb-yellow);
+    font-size: 1.5rem;
+    transform:translateY(-50%);
+}
+
+.display-container button{
+    position: absolute;
+    top: 50%;
+    right:1.5rem;
+    transform:translateY(-50%);
+}
+
+.input-container{
+    width: 100%;
+    background-color: var(--dk-violet);
+    border-radius: 1rem;
+    padding: 2rem;
+    border-bottom:0.35rem solid var(--lt-violet2);
+    color: var(--pl-white);
+}
+
+.length-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.length-container p:nth-child(1) /*Aise likhne ka mtlb yeh hota hai ki strength container wale div me 1st paragraph tag ki baat kr rahe hai*/
+{
+    font-size: 1.5rem;
+}
+
+.length-container p:nth-child(2)
+{
+    font-size: 1.5rem;
+    color: var(--vb-yellow);
+}
+
+.strength-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.75rem;
+    margin-bottom: 2rem
+}
+
+.strength-container p:nth-child(1)
+{
+    font-size: 1.5rem;
+}
+
+.circle{
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    color: var(--vb-yellow);
+}
+
+.generateButton{
+    width: 100%;
+    padding: 1rem 0;
+    background-color: var(--vb-violet);
+    text-align: center;
+    border-radius: 0.75rem;
+    border-bottom: 0.35rem solid var(--vb-yellow);
+    text-transform : uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--vb-yellow);
+}
+
+.checkboxes{
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    gap: 0 1.5rem;
+}
+
+.checkboxes input{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2.2px solid var(--vb-cyan);
+    cursor: pointer;
+    border-radius: 0.35rem;
+    position: relative;
+}
+
+.checkboxes input:checked{
+    background-color: var(--vb-cyan);
+}
+
+.checkboxes input:checked::before{
+    content: '✔';
+    position: absolute;
+    color: var(--dk-text);
+    font-size: 1.15rem;
+    font-weight: 600;
+    transform: translateY(-20%);
+}
+
+.slider{
+    appearance: none;
+    width: 100%;
+    height: 1rem;
+    cursor: pointer;
+    background-color: var(--lt-violet);
+    border-radius: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    background-image: linear-gradient(var(--vb-violet2) , var(--vb-violet2));
+    background-repeat: no-repeat;
+}
+
+.slider::-webkit-slider-thumb{
+    position: relative;
+    appearance: none;
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+    border-radius:50%;
+    background-color: var(--vb-yellow);
+    margin-top: -3px;
+    box-shadow: 0px 0px 20px 0px rgba(255,229,61,0.50);
+    transition: all 100ms ease-in;
+}   
+
+.slider:focus{
+    outline: 3px solid var(--vb-yellow); 
+}
+
+/* Sirf chrome me hi webkit chalega , Firefox me chlana hai to moz thumb use krna padega */
+.slider::-webkit-slider-thumb:hover{
+    outline: 2px solid var(--vb-yellow);
+    background-color: var(--dk-violet);
+    box-shadow: 0px 0px 25px 5px rgba(255,229,61,0.8);
+}
+
+.copyButton{
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.copyText{
+    position: absolute;
+    color: var(--vb-yellow);
+    background-color: var(--vb-violet2);
+    font-size: 1.25rem;
+    top: -35px;
+    left: -25px;
+    padding:5px 10px;
+    border-radius: 1rem;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: bottom;
+    transition: all 250ms ease-in-out;
+}
+
+.copyText.active{
+    opacity:1;
+    transform: scale(1);
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 950px;
+    margin-bottom: 30px;
+    padding-left: 0.5rem;
+}
+
+.profile{
+    /* margin-bottom: 8rem; */
+    transform: translateY(-100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.profile img{
+    margin-left: 40px;
+}
+
+.profile p:nth-child(1) {
+    padding-left: 50px;
+    color: hsl(52,100%,62%);
+    font-weight: 600;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+}
+
+.profile h1 {
+    padding-left: 50px;
+    color: var(--vb-cyan2);
+    font-weight: 600;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+}
+
+.profile h2{
+    padding-left: 50px;
+    font-size: 1.25rem;
+    color: var(--vb-yellow);
+}
+
+.icons{
+    transform: translateY(-300%);
+    padding-right: 70px;
+    display: flex;
+    gap: 20px;
+}

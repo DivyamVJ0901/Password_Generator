@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>PASSWORD GENERATOR</h1>
+
+      <div class="display-container">
+        <input
+          readonly
+          placeholder="PASSWORD"
+          class="display"
+          data-passwordDisplay
+        />
+
+        <button class="copyButton" data-copy>
+          <span class="copyText" data-copypassword></span>
+          <img src="./assets/copy.svg" height="23" width="23" />
+        </button>
+      </div>
+
+      <div class="input-container">
+        <div class="length-container">
+          <p>Password Length</p>
+          <p data-lengthNumber>0</p>
+        </div>
+
+        <input
+          type="range"
+          min="0"
+          max="20"
+          class="slider"
+          step="1"
+          data-lengthSlider
+        />
+
+        <!-- Checkboxes -->
+        <div class="checkboxes">
+          <input type="checkbox" id="uppercase" />
+          <label for="upeercase">Include Uppercase Letters</label>
+        </div>
+        <div class="checkboxes">
+          <input type="checkbox" id="lowercase" />
+          <label for="lowercase">Include Lowercase Letters</label>
+        </div>
+        <div class="checkboxes">
+          <input type="checkbox" id="numbers" />
+          <label for="numbers">Include Numbers</label>
+        </div>
+        <div class="checkboxes">
+          <input type="checkbox" id="symbols" />
+          <label for="symbols">Include Symbols</label>
+        </div>
+
+        <!-- Strength part  -->
+
+        <div class="strength-container">
+          <p>Strength</p>
+          <div class="circle" data-indicator></div>
+        </div>
+
+        <!-- Generate Password -->
+        <button class="generateButton">Generate Password</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="profile">
+        <p>Designed by :</p>
+        <img
+          src="/assets/fotor_2023-4-3_14_25_19.png"
+          width="140px"
+          height="150px"
+          alt=""
+        />
+        <h1>DIVYAM VIJAY</h1>
+        <h2>(Web Developer)</h2>
+      </div>
+
+      <div class="icons">
+        <a
+          href="https://www.linkedin.com/in/divyam-vijay-597768233/"
+          target="_blank"
+          ><img src="/assets/LinkedIn.png" height="50px" width="50px" alt=""
+        /></a>
+        <a href="https://github.com/DivyamVJ0901" target="_blank"
+          ><img src="/assets/Github.png" height="50px" width="50px" alt=""
+        /></a>
+        <a href="https://twitter.com/DivyamVijay10" target="_blank"
+          ><img src="/assets/twitter.png" height="50px" width="50px" alt=""
+        /></a>
+        <a href="https://www.instagram.com/divyamvijay543/" target="_blank"
+          ><img src="/assets/Instagram.png" height="50px" width="50px" alt=""
+        /></a>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
